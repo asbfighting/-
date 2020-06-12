@@ -1,0 +1,13 @@
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+img=cv2.imread("C:/Users/Think/Desktop/2.jpg")
+img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+plt.imshow(img)
+
+img=np.uint8(img)
+jpg2= cv2.fastNlMeansDenoisingColored(img,None,10,10,7,21)
+plt.rcParams['figure.figsize']=(15.0,15.0)
+plt.subplot(121),plt.imshow(img)
+plt.subplot(122),plt.imshow(jpg2)
+plt.show()
